@@ -15,9 +15,9 @@ book::book(string first, string last, string bookName, int year){
 	  this->lastName = last;
 	  this -> title = bookName;
 	  this->yearPublished = year;
-	  int rated[10]{0};
+
 	    for (int i=0; i<10;i++){
-		   cout<< rated[i]<<endl;
+	    	this->ratings[i] = 0;
     	   }
 	}
 book::book(string first, string last, string bookName, int year, int rate[10]){

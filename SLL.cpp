@@ -67,9 +67,43 @@ void SLL :: addAtFront (int r, string c){
 	SNode *newnode = new SNode(r,c);
 	SNode *node = first;
 
-	first->next = first;
+	newnode->next = first;
 	first = newnode;
 
+}
+
+
+void SLL :: addFirst (int r, string c) {
+	SNode *newnode = new SNode(r,c);
+	first = newnode;
+	last = newnode;
+}
+
+int SLL :: pop(){
+	int temp = last->rating;
+	delete last;
+	SNode *node;
+	for (node = first; node->next != NULL; node=node->next)
+	{
+
+	}
+
+	last = node;
+
+	return last->rating;
+}
+
+double SLL :: getAve(){
+	SNode *node;
+	double average =0;
+	double i =0;
+	for (node = first; node->next != NULL; node=node->next)
+	{
+		average += node->rating;
+		i += 1;
+	}
+	average /= i;
+	return average;
 }
 
 
