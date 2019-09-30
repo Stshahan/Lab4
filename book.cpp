@@ -10,6 +10,18 @@
 #include <time.h>
 using namespace std;
 
+book::book(){
+	 this->firstName = " ";
+	 this->lastName = " ";
+	 this -> title = " ";
+	 this->yearPublished = 0;
+	 	for (int i=0; i<10;i++){
+		    	this->ratings[i] = 0;
+	    	   }
+}
+
+
+
 book::book(string first, string last, string bookName, int year){
 	  this->firstName = first;
 	  this->lastName = last;
@@ -45,4 +57,21 @@ void printAvgRating(int rate[10]){
 	else
 	cout<< "No Ratings Yet"<< endl;
 }
+
+void printInfo(book a){
+	cout<< "Book Info: " << endl;
+	cout << "Title: " << a.getTitle() <<endl;
+	cout << "Author: " << a.getFirstName() << " " << a.getLastName() << endl;
+	cout << "Year Published: " << a.getYearPublished() << endl;
+	cout << "Rating: ";
+	printAvgRating(a.getRatings();
+}
+
+bool book::operator>(book b){
+	if (findAvgRating(b.ratings) > findAvgRating(this->ratings))
+		return true;
+	else
+		return false;
+}
+
 
