@@ -42,15 +42,16 @@ book::book(string first, string last, string bookName, int year, int rate[10]){
 	  }
 }
 
-double findAvgRating(int rate[10]){
+double book::findAvgRating(int rate[10]){
 	int total = 0;
 	for (int i=0; i<10;i++){
 		total = total + rate[i];
 	}
-	return total/10;
+	double rating =(double)total/10;
+	return rating;
 }
 
-void printAvgRating(int rate[10]){
+void book::printAvgRating(int rate[10]){
 	double avgRating = findAvgRating(rate);
 	if (avgRating>0)
 	cout<<"The Average Rating is:" << findAvgRating(rate) << endl;
@@ -58,13 +59,13 @@ void printAvgRating(int rate[10]){
 	cout<< "No Ratings Yet"<< endl;
 }
 
-void printInfo(book a){
+void book::printInfo(book a){
 	cout<< "Book Info: " << endl;
 	cout << "Title: " << a.getTitle() <<endl;
 	cout << "Author: " << a.getFirstName() << " " << a.getLastName() << endl;
 	cout << "Year Published: " << a.getYearPublished() << endl;
 	cout << "Rating: ";
-	printAvgRating(a.getRatings();
+	printAvgRating(a.getRatings());
 }
 
 bool book::operator>(book b){
