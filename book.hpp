@@ -24,9 +24,9 @@ public:
 book();
 book(string first, string last, string bookName, int year);
 book(string first, string last, string bookName, int year, int rate[10]);
-void printAvgRating(int rate[10]);
-double findAvgRating(int rate[10]);
-void printInfo(book a);
+void printAvgRating();
+double findAvgRating();
+void printInfo();
 bool operator>(book b);
 
 

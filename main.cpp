@@ -15,7 +15,7 @@ void sortBookArray(book a [5]);
 	int b [10]= {9,9,9,3,9,9,5,9,9,9};
 	int c [10]= {1,2,3,3,3,5,5,6,3,3};
 	int d [10]= {9,2,2,9,4,5,9,6,9,9};
-	int e [10]= {9,9,9,9,9,5,5,6,7,9};
+	int e [10]= {9,9,9,9,9,5,5,10,7,9};
 	book bookArray[5];
 	book bookA("Miguel De", "Cervantes", "Don Quixote", 1605, a);
 	bookArray[0]=bookA;
@@ -34,14 +34,15 @@ void sortBookArray(book a [5]);
 	cout<< endl;
 	cout<<endl;
 	cout<<"The Highest Rated Book is:"<< endl;
-	bookArray[0].printInfo(bookArray[0]);
+	bookArray[0].printInfo();
 
 	cout << endl;
 
 	book *newBook = new book("Alexandre", "Dumas", "The Count of Monte Cristo", 1844, e);
 
-	newBook->printInfo(*newBook);
+	newBook->printInfo();
 
+	cout << endl;
 
 	//************Lab 4B**********************
 	int r[10] = {9,8,4,5,11,10,3,6,8,2};
@@ -79,7 +80,7 @@ void sortBookArray(book a [5]);
 
  void printBookArrayInfo(book a [5]){
 	 for (int i = 0; i<5; i++){
-		 a[i].printInfo(a[i]);
+		 a[i].printInfo();
 	 }
  }
 
