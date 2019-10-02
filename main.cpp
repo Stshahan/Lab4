@@ -11,11 +11,11 @@ void sortBookArray(book a [5]);
 
  int main(void){
 
-	int a [10]= {1,2,2,3,4,5,5,6,7,9};
-	int b [10]= {9,9,9,3,9,9,5,9,9,9};
-	int c [10]= {1,2,3,3,3,5,5,6,3,3};
+	int a [10]= {7,2,2,3,4,6,5,6,7,9};
+	int b [10]= {9,9,9,3,9,9,6,9,9,9};
+	int c [10]= {0,0,0,0,0,0,0,0,0,0};
 	int d [10]= {9,2,2,9,4,5,9,6,9,9};
-	int e [10]= {9,9,9,9,9,5,5,10,7,9};
+	int e [10]= {9,9,9,9,9,5,5,10,10,9};
 	book bookArray[5];
 	book bookA("Miguel De", "Cervantes", "Don Quixote", 1605, a);
 	bookArray[0]=bookA;
@@ -38,9 +38,17 @@ void sortBookArray(book a [5]);
 
 	cout << endl;
 
-	book *newBook = new book("Alexandre", "Dumas", "The Count of Monte Cristo", 1844, e);
+	book *newBook = new book("George", "Orwell", "Animal Farm", 1941, d);
 
 	newBook->printInfo();
+
+	cout << endl;
+	cout<< "array of book objects on the heap"<< endl;
+	book* heapArray = new book[2]; // Creates array of book objects on the heap
+	heapArray[0] = bookA;
+	heapArray[1] = bookB;
+	heapArray[0].printInfo();
+	heapArray[1].printInfo();
 
 	cout << endl;
 

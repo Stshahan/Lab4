@@ -42,12 +42,20 @@ book::book(string first, string last, string bookName, int year, int rate[10]){
 	  }
 }
 
+book::~book(){
+		//needed to prevent memory leak
+		cout << "book destroyed!!"<< endl;
+	}
+
+
+
+
 double book::findAvgRating(){
-	int total = 0;
+	double total = 0;
 	for (int i=0; i<10;i++){
 		total = total + this->ratings[i];
 	}
-	double rating =(double)total/10;
+	double rating =(double)total/(double)10;
 	return rating;
 }
 
@@ -61,9 +69,9 @@ void book::printAvgRating(){
 
 void book::printInfo(){
 	cout<< "Book Info: " << endl;
-	cout << "Title: " << this->getTitle() <<endl;
-	cout << "Author: " << this->getFirstName() << " " << this->getLastName() << endl;
-	cout << "Year Published: " << this->getYearPublished() << endl;
+	cout << "Title: " << this->title <<endl;
+	cout << "Author: " << this->firstName << " " << this->lastName << endl;
+	cout << "Year Published: " << this->yearPublished << endl;
 	cout << "Rating: ";
 	this->printAvgRating();
 }
