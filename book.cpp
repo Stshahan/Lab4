@@ -21,7 +21,9 @@ book::book(){
 	    	   }
 }
 
-
+book::~book(){
+	cout<< "destroyed"<<endl;
+}
 
 book::book(string first, string last, string bookName, int year){
 	  this->firstName = first;
