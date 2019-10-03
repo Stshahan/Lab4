@@ -24,31 +24,12 @@ public:
 book();
 book(string first, string last, string bookName, int year);
 book(string first, string last, string bookName, int year, int rate[10]);
-void printAvgRating(int rate[10]);
-double findAvgRating(int rate[10]);
-void printInfo(book a);
+~book();
+void printAvgRating();
+double findAvgRating();
+void printInfo();
 bool operator>(book b);
 
-
-	const string& getFirstName() const {
-		return firstName;
-	}
-
-	const string& getLastName() const {
-		return lastName;
-	}
-
-	int* getRatings() const {
-		return ratings;
-	}
-
-	const string& getTitle() const {
-		return title;
-	}
-
-	int getYearPublished() const {
-		return yearPublished;
-	}
 };
 
 
