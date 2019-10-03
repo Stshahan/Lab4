@@ -29,7 +29,7 @@ void sortBookArray(book a [5]);
 	bookArray[2]=bookC;
 	book bookD("Junto", "Diaz", "The Brief and Wondrous Life of Oscar Wao", 2007, d);
 	bookArray[3]=bookD;
-	book bookE("Alexandre", "Dumas", "The Count of Monte Cristo", 1844, e);
+	book bookE("Alexandre", "Dumas", "The Count of Monte Cristo ", 1844, e);
 	bookArray[4]=bookE;
 
 	cout<<"Book Array Before Sort:"<<endl;
