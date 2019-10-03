@@ -14,20 +14,27 @@ size = 0;
 }
 
 SLL :: ~SLL(){
- first = NULL;
- last = NULL;
+ SNode *node = first;
+ SNode *todelete = NULL;
+ for (; node != NULL;) {
+	 cout << "deleting " << node->rating << ", " << node->comments << endl;
+	 todelete = node;
+	 node = node->next;
+	 delete todelete;
+ }
+ cout << "deleted each node in ll" << endl;
 }
 
 void SLL:: printSLL(){
 	if (first != NULL)
 	{
 		SNode *node= first;
-		for (; node->next != last; node= node->next)
+		for (; node != NULL; node= node->next)
 		{
 			node-> printNode();
 		}
 	}
-
+	//cout << "Im in printSLL" << endl;
 }
 
 void SLL::insertInOrder(int r, string c){
@@ -56,20 +63,16 @@ void SLL::insertInOrder(int r, string c){
 
 void SLL :: push (int r, string c){
 	SNode *newnode = new SNode(r,c);
-	SNode *node = first;
-
 	last->next = newnode;
 	last = newnode;
-
+	size++;
 }
 
 void SLL :: addAtFront (int r, string c){
 	SNode *newnode = new SNode(r,c);
-	SNode *node = first;
-
 	newnode->next = first;
 	first = newnode;
-
+	size++;
 }
 
 
@@ -77,20 +80,18 @@ void SLL :: addFirst (int r, string c) {
 	SNode *newnode = new SNode(r,c);
 	first = newnode;
 	last = newnode;
+	size++;
 }
 
 int SLL :: pop(){
-	int temp = last->rating;
-	delete last;
 	SNode *node;
-	for (node = first; node->next != NULL; node=node->next)
-	{
-
-	}
-
+	SNode *oldLast = last;
+	for (node = first; node->next != last; node=node->next);
 	last = node;
-
-	return last->rating;
+	int r = oldLast->rating;
+	delete oldLast;
+	size--;
+	return r;
 }
 
 double SLL :: getAve(){
@@ -101,8 +102,9 @@ double SLL :: getAve(){
 	{
 		average += node->rating;
 		i += 1;
+		//cout << i << ":" << average << endl;
 	}
-	average /= i;
+	average /= i - 1;
 	return average;
 }
 

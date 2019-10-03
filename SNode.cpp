@@ -8,6 +8,9 @@
 #include "SNode.hpp"
 
 SNode::SNode(){
+	rating = 0;
+	comments = "";
+	next = NULL;
 	cout<< "Please input a rating"<<endl;
 	cin>> rating;
 	cout<< "Please input your comments"<<endl;
@@ -17,13 +20,14 @@ SNode::SNode(){
 SNode::SNode(int r, string c) {
 	rating = r;
 	comments = c;
-
+	next = NULL;
 }
 
 SNode::~SNode (){
 	next = NULL;
+	cout << "deleting " << rating << ", " << comments << endl;
 }
 
 void SNode::printNode(){
-	cout<< rating << comments <<endl;
+	cout<< "Rating: " <<rating<< ", "<<"Comments: " << comments <<endl;
 }

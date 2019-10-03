@@ -12,7 +12,7 @@ void sortBookArray(book a [5]);
 
  int main(void){
 
-	int a [10];
+/*	int a [10];
 	ratingGenerator(a);
 	book bookArray[5];
 	book bookA("Miguel De", "Cervantes", "Don Quixote", 1605, a);
@@ -34,7 +34,7 @@ void sortBookArray(book a [5]);
 
 
 
-	//************Lab 4B**********************
+	*///************Lab 4B**********************
 	int r[10] = {9,8,4,5,11,10,3,6,8,2};
 	string s[10] = {"really good!","loved it","mediocre", "okay, not great","best book ever!", "awesome!","boring","not bad","definitely worth reading", "terrible!"};
 	SLL *list = new SLL();
@@ -76,7 +76,7 @@ void sortBookArray(book a [5]);
 
  void printBookArrayInfo(book a [5]){
 	 for (int i = 0; i<5; i++){
-		 printInfo();
+		 a[i].printInfo();
 	 }
  }
 
