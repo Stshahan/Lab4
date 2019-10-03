@@ -10,10 +10,12 @@ void printBookArrayInfo(book a [5]);
 void sortBookArray(book a [5]);
 
  int main(void){
-
-    //int a [10];
-	//ratingGenerator(a);
-	int a [10]= {7,2,2,3,4,6,5,6,7,9};
+	 /*code below creates 5 book objects on the stack within bookArray.
+	  *
+	  *
+	  *
+	  */
+  	int a [10]= {7,2,2,3,4,6,5,6,7,9};
 	int b [10]= {9,9,9,3,9,9,6,9,9,9};
 	int c [10]= {0,0,0,0,0,0,0,0,0,0};
 	int d [10]= {9,2,2,9,4,5,9,6,9,9};
@@ -31,20 +33,25 @@ void sortBookArray(book a [5]);
 	bookArray[4]=bookE;
 
 	cout<<"Book Array Before Sort:"<<endl;
-	printBookArrayInfo(bookArray);
-	sortBookArray(bookArray);
+	printBookArrayInfo(bookArray);//prints full book array (not required but lets you see everything)
+	sortBookArray(bookArray); // sorts the book array using the > operator storing the book with the highest rating in the [0] index of the array
 	cout<< endl;
+
+	cout<< "***********************************************************************"<<endl;
+
 	cout<<endl;
 	cout<<"The Highest Rated Book is:"<< endl;
-	bookArray[0].printInfo();
+	bookArray[0].printInfo();//prints the highest rated book.
 
 	cout << endl;
+	cout<< "************************************************************************"<<endl;
+	book *newBook = new book("George", "Orwell", "Animal Farm", 1941, d); // creates book object on the heap
 
-	book *newBook = new book("George", "Orwell", "Animal Farm", 1941, d);
-
-	newBook->printInfo();
+	newBook->printInfo();//prints book info for the book created on the heap
 
 	cout << endl;
+	cout << "********************************************************************"<<endl;
+
 	cout<< "array of book objects on the heap"<< endl;
 	book* heapArray = new book[2]; // Creates array of book objects on the heap
 	heapArray[0] = bookA;
@@ -71,12 +78,9 @@ void sortBookArray(book a [5]);
 	return 0;
 }
 
-
-
-
-
  void sortBookArray(book a [5]){
-	 book temp = a[0];
+	 book temp;
+	 temp = a[0];
 	 for(int j=0;j<5;j++)
 		 for(int i=j;i<5;i++){
 			 if(a[j]>a[i]){

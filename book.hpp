@@ -22,9 +22,9 @@ private:
 
 public:
 book();
-book(string first, string last, string bookName, int year);
-book(string first, string last, string bookName, int year, int rate[10]);
-~book();
+book(string first, string last, string bookName, int year); // overloaded constructor.
+book(string first, string last, string bookName, int year, int rate[10]);//overloaded constructor
+~book();// book destructor
 void printAvgRating();
 double findAvgRating();
 void printInfo();
