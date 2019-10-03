@@ -1,5 +1,7 @@
-
-
+//Victoria Todd, Jayson Morgado, Shaun Shahan
+//TA: Lauren Olson
+//10/3/2019
+// CISC220 Lab 4/===========================================================================
 #include "book.hpp"
 #include <iostream>
 #include <stdlib.h>
@@ -11,9 +13,6 @@ void sortBookArray(book a [5]);
 
  int main(void){
 	 /*code below creates 5 book objects on the stack within bookArray.
-	  *
-	  *
-	  *
 	  */
   	int a [10]= {7,2,2,3,4,6,5,6,7,9};
 	int b [10]= {9,9,9,3,9,9,6,9,9,9};
@@ -56,7 +55,7 @@ void sortBookArray(book a [5]);
 	book* heapArray = new book[2]; // Creates array of book objects on the heap
 	heapArray[0] = bookA;
 	heapArray[1] = bookB;
-	heapArray[0].printInfo();
+	heapArray[0].printInfo();//prints elements of the array on the heap.
 	heapArray[1].printInfo();
 
 	cout << endl;
