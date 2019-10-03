@@ -43,14 +43,6 @@ book::book(string first, string last, string bookName, int year, int rate[10]){
 	  }
 }
 
-book::~book(){
-		//needed to prevent memory leak
-		cout << "book destroyed!!"<< endl;
-	}
-
-
-
-
 double book::findAvgRating(){
 	double total = 0;
 	for (int i=0; i<10;i++){
